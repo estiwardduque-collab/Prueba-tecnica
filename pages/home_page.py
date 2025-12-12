@@ -11,6 +11,10 @@ class HomePage(BasePage):
     # Generic product selection locator (e.g., first element in list or specific one if needed)
     FIRST_PRODUCT_IMAGE = (By.CSS_SELECTOR, ".product-layout .image a")
 
+    def open_url(self, url):
+        super().open_url(url)
+        self.handle_ssl_warning()
+
     def go_to_register(self):
         self.click(self.MY_ACCOUNT_DROPDOWN)
         self.click(self.REGISTER_OPTION)

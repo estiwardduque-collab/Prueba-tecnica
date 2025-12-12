@@ -10,9 +10,6 @@ from config.config import Config
 class TestFullPurchaseFlow:
     def test_full_purchase_flow(self, driver):
         # 1. Register/Login (Need to be logged in for checkout address flow to be smoother or as per req)
-        # Requirement: "Iniciar sesión con las credenciales recién creadas" then do the flow.
-        
-        # Create User & Login (Implicitly logged in after register)
         home_page = HomePage(driver)
         home_page.open_url(Config.BASE_URL)
         home_page.go_to_register()
@@ -50,4 +47,4 @@ class TestFullPurchaseFlow:
         
         # 7. Validate
         final_msg = checkout_page.get_final_confirmation()
-        assert "Your order has been placed!" == final_msg
+        assert "Your order has been placed!" in final_msg

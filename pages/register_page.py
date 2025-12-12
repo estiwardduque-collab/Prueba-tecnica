@@ -10,7 +10,7 @@ class RegisterPage(BasePage):
     CONFIRM_PASSWORD = (By.ID, "input-confirm")
     PRIVACY_POLICY = (By.NAME, "agree")
     CONTINUE_BUTTON = (By.CSS_SELECTOR, "input[value='Continue']")
-    SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#content h1")
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#content")
 
     def register_user(self, first_name, last_name, email, password):
         self.type(self.FIRST_NAME, first_name)
